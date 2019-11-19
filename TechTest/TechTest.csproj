@@ -6,11 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Document\" />
+    <Folder Include="Documents\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Document\EDIFACT.txt">
+    <None Update="Documents\EDIFACT.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Documents\XML">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Documents\XML.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

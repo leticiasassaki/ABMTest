@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Xml;
+using TechTest.Class;
 
 namespace TechTest
 {
@@ -9,8 +11,7 @@ namespace TechTest
         static void Main(string[] args)
         {
             Exercise1();
-
-
+            Exercise2();
         }
 
         static void Exercise1()
@@ -32,6 +33,23 @@ namespace TechTest
             {
                 for (int i = 0; i < locElements.Length; i++)
                     Console.WriteLine($"LOC elements [{locElements[i]}]");
+            }
+        }
+
+        static void Exercise2()
+        {
+            string xmlPath = Path.GetFullPath("Documents/XML.xml");
+
+            XmlDocument xmlDocument = new XmlDocument();
+            XMLReader xmlReader = new XMLReader();
+
+            xmlDocument.Load(xmlPath);
+            XmlNodeList xmlNodeList = xmlReader.GetXmlNodeList(xmlDocument);
+            var xmlList = xmlReader.GetXmlRefCode(xmlNodeList);
+
+            foreach (var item in xmlList)
+            {
+                Console.WriteLine(item.InnerText);
             }
         }
     }
